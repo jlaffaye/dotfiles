@@ -4,6 +4,8 @@ export ZSH=${HOME}/.oh-my-zsh
 # Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="risto"
 
+DISABLE_AUTO_UPDATE="true"
+
 COMPLETION_WAITING_DOTS="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
@@ -28,4 +30,17 @@ export LC_ALL="en_US.UTF-8"
 export GOPATH="${HOME}"
 export GO15VENDOREXPERIMENT=1
 
-alias vim="nvim"
+# Ctrl-R
+bindkey '^R' history-incremental-search-backward
+
+# Don't share history
+setopt append_history no_inc_append_history no_share_history
+
+function reload_zsh {
+    source ~/.zshrc
+    rehash
+}
+
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi

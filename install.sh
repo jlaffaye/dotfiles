@@ -8,8 +8,10 @@ mkdirp () {
     /bin/mkdir -p $1
 }
 
-SCRIPT_REALPATH=`realpath $0`
+SCRIPT_REALPATH=`readlink -f $0`
 DOTFILES_DIR=`dirname ${SCRIPT_REALPATH}`
+
+#git submodule update --init --recursive
 
 symlink "${HOME}/.oh-my-zsh" "${DOTFILES_DIR}/oh-my-zsh"
 symlink "${HOME}/.zshrc" "${DOTFILES_DIR}/zshrc"

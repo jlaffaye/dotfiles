@@ -124,3 +124,8 @@ if !exists("*Vimrc_update()")
         call lightline#update()
     endfunction
 endif
+
+" Source local vimrc
+if filereadable(glob("~/.vimrc_local"))
+    source ~/.vimrc_local
+endif
