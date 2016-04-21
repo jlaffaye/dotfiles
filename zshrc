@@ -15,13 +15,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git pass)
 
 # User configuration
 
 export PATH="${PATH}:${HOME}/bin"
-
-source $ZSH/oh-my-zsh.sh
 
 export PAGER="less"
 export EDITOR="vim"
@@ -44,3 +42,5 @@ function reload_zsh {
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
+
+source $ZSH/oh-my-zsh.sh
