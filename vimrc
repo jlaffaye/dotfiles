@@ -5,6 +5,7 @@ Plug 'csexton/trailertrash.vim'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 Plug 'scrooloose/syntastic'
 Plug 'fatih/vim-go', { 'for': 'go' }
 
