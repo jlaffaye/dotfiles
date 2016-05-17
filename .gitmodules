@@ -4,3 +4,6 @@
 [submodule "vim-plug"]
 	path = vim-plug
 	url = https://github.com/junegunn/vim-plug.git
+[submodule "ssh-ident"]
+	path = ssh-ident
+	url = https://github.com/ccontavalli/ssh-ident.git
