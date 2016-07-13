@@ -31,9 +31,6 @@ export GO15VENDOREXPERIMENT=1
 # Ctrl-R
 bindkey '^R' history-incremental-search-backward
 
-# Don't share history
-setopt append_history no_inc_append_history no_share_history
-
 function reload_zsh {
     source ~/.zshrc
     rehash
@@ -44,3 +41,6 @@ if [ -f ~/.zshrc_local ]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+# Don't share history
+setopt append_history no_inc_append_history no_share_history
