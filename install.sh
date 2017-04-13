@@ -26,3 +26,4 @@ symlink "${HOME}/.tmux.conf" "${DOTFILES_DIR}/tmux.conf"
 
 mkdirp "${HOME}/bin"
 symlink "${HOME}/bin/ssh-ident" "${DOTFILES_DIR}/ssh-ident/ssh-ident"
+symlink "${HOME}/.ssh-ident" "${DOTFILES_DIR}/ssh-ident.conf"
