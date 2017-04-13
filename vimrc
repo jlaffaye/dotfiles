@@ -8,6 +8,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/syntastic'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'elzr/vim-json', { 'for': 'json' }
 
 if has('python')
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -87,6 +88,8 @@ nmap <leader>l :set list!<CR>
 nnoremap <F12> :set invpaste paste?<CR>
 set pastetoggle=<F12>
 set showmode
+
+let g:vim_json_syntax_conceal = 0
 
 " autocmd paste mode
 augroup paste_helper
