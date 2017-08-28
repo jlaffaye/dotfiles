@@ -11,10 +11,6 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
 
-if has('python')
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-endif
-
 call plug#end()
 
 set nocompatible
