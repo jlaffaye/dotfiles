@@ -13,8 +13,8 @@ def mkdirs(path):
             raise
 
 def symlink(link, dest):
-    link_path = os.path.expanduser(link)
-    dest_path = os.path.expanduser(dest)
+    link_path = os.path.normpath(os.path.expanduser(link))
+    dest_path = os.path.normpath(os.path.expanduser(dest))
     try:
         os.symlink(dest_path, link_path)
     except OSError as e:
@@ -40,6 +40,8 @@ symlink("~/.config/nvim", "~/.vim")
 symlink("~/.vim/init.vim", "~/.vimrc")
 
 symlink("~/.tmux.conf", os.path.join(dotfiles_dir, "./tmux.conf"))
+
+symlink("~/.gitconfig", os.path.join(dotfiles_dir, "./gitconfig"))
 
 mkdirs("~/bin")
 symlink("~/bin/ssh-ident", os.path.join(dotfiles_dir, "./ssh-ident/ssh-ident"))
