@@ -11,9 +11,17 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
 
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'go' }
+    Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}, 'for': 'go'}
+    Plug 'jodosha/vim-godebug', { 'for': 'go' } " Debugger integration via delve
+    Plug 'SirVer/ultisnips'
+endif
+
 call plug#end()
 
 set nocompatible
+set noswapfile
 
 set ruler
 set laststatus=2
@@ -73,7 +81,15 @@ let g:go_fmt_fail_silently = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_doc_command = "godoc"
-let g:go_doc_keywordprg_enabled = 0 " handled by .vim/ftplugin/go.vim
+let g:go_auto_type_info = 1
+"let g:go_doc_keywordprg_enabled = 0 " handled by .vim/ftplugin/go.vim
+
+let g:deoplete#enable_at_startup = 1
+" neocomplete like
+"set completeopt+=noinsert
+" deoplete.nvim recommend
+"set completeopt+=noselect
+
 
 let mapleader=","
 set listchars=tab:▸\ ,eol:¬,trail:·
