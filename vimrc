@@ -32,6 +32,7 @@ set mouse=
 
 filetype plugin indent on
 syntax on
+set termguicolors
 colorscheme molokai
 
 set laststatus=2
