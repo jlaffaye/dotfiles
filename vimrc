@@ -64,6 +64,10 @@ set ignorecase      " Ignore case of searches
 set smartcase       " Search with case only if needed
 set hlsearch        " Highlight search while typing
 
+" Spell check
+set spell spelllang=en_us
+set complete+=kspell
+
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
