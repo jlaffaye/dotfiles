@@ -36,11 +36,14 @@ function reload_zsh {
     rehash
 }
 
-if [ -f ~/.zshrc_local ]; then
-    source ~/.zshrc_local
-fi
 
 source $ZSH/oh-my-zsh.sh
 
 # Don't share history
 setopt append_history no_inc_append_history no_share_history
+
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi

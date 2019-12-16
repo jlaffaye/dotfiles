@@ -4,6 +4,7 @@
 
 [core]
     preloadindex = true
+    commitGraph = true
 
 [branch]
     autosetupmerge = true
@@ -41,9 +42,11 @@
 
 [diff]
     indentHeuristic = on
+    algorithm = patience
+    noprefix = true
 
 [push]
-    default = tracking
+    default = current
 
 [fetch]
     prune = true
