@@ -3,12 +3,10 @@ export ZSH=${HOME}/.oh-my-zsh
 
 # Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="risto"
-
 DISABLE_AUTO_UPDATE="true"
-
 COMPLETION_WAITING_DOTS="true"
-
 CASE_SENSITIVE="true"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
