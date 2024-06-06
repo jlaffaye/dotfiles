@@ -1,0 +1,16 @@
+- name: Render local Brewfile
+  ansible.builtin.template:
+    src: "brewfile.j2"
+    dest: "~/.Brewfile"
+  register: brewfile
+
+- name: Install packages via Homebrew
+  ansible.builtin.shell: brew bundle --no-lock --file ~/.Brewfile
+  when: brewfile.changed
+
+- name: osx defaults
+  include_tasks: "osx_defaults.yml"
+  args:
+    apply:
+      tags:
+        - osx_defaults

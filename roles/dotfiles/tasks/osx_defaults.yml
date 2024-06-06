@@ -1,0 +1,67 @@
+- name : Finder default location
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTarget
+    type: string
+    value: "PfHm"
+  notify:
+    - restart finder
+
+- name : Finder default location path
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTargetPath
+    type: string
+    value: "file://{{ansible_env.HOME}}/"
+  notify:
+    - restart finder
+
+- name : Finder shows file extensions
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+  notify:
+    - restart finder
+
+- name : Finder search in current folder
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: FXDefaultSearchScope
+    type: string
+    value: "SCcf"
+  notify:
+    - restart finder
+
+- name : Finder show path bar
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: ShowPathbar
+    type: bool
+    value: true
+  notify:
+    - restart finder
+
+- name : Finder keep folders first
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: "_FXSortFoldersFirst"
+    type: bool
+    value: true
+  notify:
+    - restart finder
+
+- name : Disable pinenty-mac keychain integration
+  community.general.osx_defaults:
+    domain: org.gpgtools.common
+    key: DisableKeychain
+    type: bool
+    value: true
+
+- name: "Desktop & Screen Saver - Require password after sleep or screen saver begins"
+  osx_defaults:
+    domain: com.apple.screensaver
+    key: askForPassword
+    type: int
+    value: 1

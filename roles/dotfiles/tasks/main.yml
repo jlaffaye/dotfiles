@@ -1,0 +1,55 @@
+- include_tasks: "{{ ansible_os_family | lower}}.yml"
+
+- name: Create directories
+  ansible.builtin.file:
+    path: '{{ item }}'
+    state: directory
+    mode: '0755'
+  loop:
+    - '~/.config'
+    - '~/.vim'
+    - '~/bin'
+
+- name: Generate files
+  ansible.builtin.template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - src: "fish.conf.j2"
+      dest: "~/.config/fish/config.fish"
+    - src: "hushlogin.j2"
+      dest: "~/.hushlogin"
+    - src: "vimrc.j2"
+      dest: "~/.vimrc"
+    - src: "gitconfig.j2"
+      dest: "~/.gitconfig"
+    - src: "tmux.conf.j2"
+      dest: "~/.tmux.conf"
+    - src: "digrc.j2"
+      dest: "~/.digrc"
+    - src: "sqliterc.j2"
+      dest: "~/.sqliterc"
+
+- name: git clone vim-plug
+  ansible.builtin.git:
+    repo: "https://github.com/junegunn/vim-plug.git"
+    dest: "~/.vim/vim-plug"
+    update: "{{ update }}"
+
+- name: Create symbolic links
+  ansible.builtin.file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  loop:
+    - src: "~/.vim/vim-plug/plug.vim"
+      dest: "~/.vim/autoload/plug.vim"
+
+- name: Install vim plugins
+  ansible.builtin.shell:
+    cmd: "vim +PlugInstall +qall"
+    creates: "~/.vim/plugged"
+
+- name: Update vim plugins
+  ansible.builtin.shell: "vim +PlugUpdate +PlugClean +qall"
+  when: update | bool

@@ -1,0 +1,124 @@
+# {{ ansible_managed }}
+
+tap "homebrew/autoupdate"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Text processing scripting language
+brew "awk"
+# Utility for managing cargo dependencies from the command-line
+brew "cargo-edit"
+# Tool for exploring each layer in a docker image
+brew "dive"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Fast, simple fuzzy text selector with an advanced scoring algorithm
+brew "fzy"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Fast linters runner for Go
+brew "golangci-lint"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# GNU grep, egrep and fgrep
+brew "grep"
+# Improved top (interactive process viewer)
+brew "htop"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Mock code autogenerator for Golang
+brew "mockery"
+# Remote terminal application
+brew "mosh"
+# 'traceroute' and 'ping' in a single tool
+brew "mtr"
+# NCurses Disk Usage
+brew "ncdu"
+# Password generator
+brew "pwgen"
+# Python version management
+brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rustup-init"
+# Vi 'workalike' with many additional features
+brew "vim"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Watch files and take action when they change
+brew "watchman"
+# Application uninstaller
+cask "appcleaner"
+# Web browser
+cask "firefox"
+cask "font-fira-code"
+# Desktop automation application
+cask "hammerspoon"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
+# Network protocol analyzer
+cask "wireshark"
+
+{% if perso | default(False) %}
+# E-books management software
+cask "calibre"
+# Free and open-source media player
+brew "iina"
+# Download YouTube videos from the command-line
+brew "youtube-dl"
+# Office suite
+cask "libreoffice"
+# Instant messaging application focusing on security
+cask "signal"
+# Desktop client for Telegram messenger
+cask "telegram-desktop"
+# Desktop client for WhatsApp
+cask "whatsapp"
+# Simple Paint Program
+cask "pinta"
+{% endif %}
+
+{% if work | default(False) %}
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Tool to manage periodic breaks
+cask "breaktimer"
+# Companion app for Blue USB microphones
+cask "blue-sherpa"
+# Support for Logitech G gear
+cask "logitech-g-hub"
+# Software for Logitech devices
+cask "logitech-options"
+# Shows the next meeting in the menu bar
+cask "meetingbar"
+# Remote pair programming app
+cask "tuple"
+# Video communication and virtual meeting platform
+cask "zoom"
+{% endif %}

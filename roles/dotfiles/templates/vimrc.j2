@@ -1,3 +1,5 @@
+" {{ ansible_managed }}
+
 call plug#begin('~/.vim/plugged')
 Plug 'fatih/molokai'
 Plug 'tpope/vim-sensible'
@@ -7,17 +9,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/syntastic'
+Plug 'tyjak/vim-redact-pass'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
-
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'go' }
-    Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}, 'for': 'go'}
-    Plug 'jodosha/vim-godebug', { 'for': 'go' } " Debugger integration via delve
-    Plug 'SirVer/ultisnips'
-endif
-
 call plug#end()
 
 set nocompatible
@@ -122,18 +116,13 @@ augroup END
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
+      \             [ 'git_branch', 'readonly', 'filename', 'modified' ] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ],
       \              ['percent'],
       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
-      \ 'component': {
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ 'component_function': {
+      \   'git_branch': 'FugitiveHead',
       \ },
       \ }
 

@@ -1,14 +1,17 @@
+# {{ ansible_managed }}
+
 [user]
     name = Julien Laffaye
+    email = {{ git_email }}
     useConfigOnly = true
 
 [core]
-    preloadindex = true
+    preloadIndex = true
     commitGraph = true
 
 [branch]
-    autosetupmerge = true
-    autosetuprebase = always
+    autoSetupMerge = true
+    autoSetupRebase = always
 
 [color]
     ui = auto
@@ -39,11 +42,17 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
     cia = commit --amend --reset-author
+    cb = cleanup-branches
+    rbm = !git fetch origin master && git rebase origin/master
+    push-new=!"git push --set-upstream origin HEAD:jlaffaye/$(git symbolic-ref HEAD | sed -e 's/^refs\\/heads\\///')"
+    checkout-new="!f() { git checkout -b $1 --track origin/jlaffaye/$1; }; f"
 
 [diff]
     indentHeuristic = on
     algorithm = patience
-    noprefix = true
+    noPrefix = true
+    colorMoved = plain
+    colorMovedws = allow-indentation-change
 
 [push]
     default = current
@@ -54,3 +63,7 @@
 # Allow local customizations in the .gitconfig_local file
 [include]
     path = ~/.gitconfig_local
+{% if work | default(False) %}
+    path = /Users/jlaffaye/.config/dev/gitconfig
+{% endif %}
+ 

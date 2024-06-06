@@ -1,0 +1,36 @@
+# {{ ansible_managed }}
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+{% if work | default(False) %}
+if test -f /opt/dev/dev.fish
+  source /opt/dev/dev.fish
+end
+
+fish_add_path /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
+
+set -x KUBECONFIG {{ ansible_facts["user_dir"] }}/.kube/config:{{ ansible_facts["user_dir"] }}/.kube/config.shopify.cloudplatform
+{% endif %}
+
+{% if ansible_facts["os_family"] == "Darwin" and ansible_facts["architecture"] == "arm64" %}
+fish_add_path --append /opt/homebrew/bin
+fish_add_path --append /opt/homebrew/sbin
+{% endif %}
+fish_add_path --append $HOME/.cargo/bin
+fish_add_path --append $HOME/bin
+
+set fish_greeting
+
+set -x EDITOR "nvim"
+set -x PAGER "less"
+set -x LC_ALL "en_US.UTF-8"
+set -x HOMEBREW_NO_AUTO_UPDATE "1"
+set -x MOSH_SERVER_NETWORK_TMOUT 86400
+
+alias diff="git diff --no-index"
+alias k=kubectl
+alias v=nvim
+
+alias checkcert="openssl x509 -text -noout -in"
