@@ -2,11 +2,6 @@
 
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Text processing scripting language
@@ -60,7 +55,7 @@ brew "python@3.10"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Safe, concurrent, practical language
-brew "rustup-init"
+brew "rustup"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Executes a program periodically, showing output fullscreen
@@ -82,8 +77,6 @@ cask "rectangle"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-# Network protocol analyzer
-cask "wireshark"
 
 {% if perso | default(False) %}
 # E-books management software
