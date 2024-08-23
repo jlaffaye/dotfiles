@@ -43,7 +43,6 @@
     ls = ls-files
     cia = commit --amend --reset-author
     cb = cleanup-branches
-    rbm = !git fetch origin master && git rebase origin/master
     push-new=!"git push --set-upstream origin HEAD:jlaffaye/$(git symbolic-ref HEAD | sed -e 's/^refs\\/heads\\///')"
     checkout-new="!f() { git checkout -b $1 --track origin/jlaffaye/$1; }; f"
 

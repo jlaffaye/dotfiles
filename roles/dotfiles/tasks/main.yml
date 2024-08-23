@@ -7,7 +7,9 @@
     mode: '0755'
   loop:
     - '~/.config'
+    - '~/.config/fish'
     - '~/.vim'
+    - '~/.vim/autoload'
     - '~/bin'
 
 - name: Generate files
@@ -29,6 +31,15 @@
       dest: "~/.digrc"
     - src: "sqliterc.j2"
       dest: "~/.sqliterc"
+
+- name: Install scripts
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "~/bin/{{ item }}"
+    mode: "0744"
+  loop:
+    - git-rbm
+    - git-cleanup-branches
 
 - name: git clone vim-plug
   ansible.builtin.git:

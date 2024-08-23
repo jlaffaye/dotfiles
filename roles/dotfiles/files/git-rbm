@@ -1,0 +1,5 @@
+#!/bin/sh
+
+MAIN_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD --short | xargs basename)
+git fetch origin ${MAIN_BRANCH}
+git rebase origin/${MAIN_BRANCH}
