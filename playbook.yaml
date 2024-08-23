@@ -3,3 +3,6 @@
   connection: local
   roles:
   - dotfiles
+  module_defaults:
+    ansible.builtin.setup:
+      gather_subset: "!hardware,!facter,!ohai"

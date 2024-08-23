@@ -5,3 +5,6 @@
     - name: Print all available facts
       ansible.builtin.debug:
         var: ansible_facts
+  module_defaults:
+    ansible.builtin.setup:
+      gather_subset: min
