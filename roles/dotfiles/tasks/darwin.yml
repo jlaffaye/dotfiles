@@ -14,3 +14,13 @@
     apply:
       tags:
         - osx_defaults
+
+- name: copy wallpaper
+  copy:
+    src: wallpaper-nz.jpg
+    dest: ~/Pictures/wallpaper-nz.jpg
+  register: wallpaper_file
+
+- name: use wallpaper
+  when: wallpaper_file.changed
+  ansible.builtin.shell: osascript -e 'tell application "Finder" to set desktop picture to POSIX file "{{wallpaper_file.dest}}"'
