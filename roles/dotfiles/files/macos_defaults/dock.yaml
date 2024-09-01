@@ -1,0 +1,24 @@
+description: Dock
+kill:
+  - Dock
+data:
+  com.apple.dock:
+    # Turn off Spaces auto-switching
+    workspaces-auto-swoosh: false
+
+    # Show only open applications in the Dock
+    static-only: true
+
+    # Wipe all (default) app icons from the Dock.
+    persistent-apps: []
+
+    # Don’t show recent applications in Dock
+    show-recents: false
+
+    # Setting the icon size of Dock items to 36 pixels for optimal size/screen-realestate
+    tilesize: 36
+
+    # Set Dock to auto-hide and remove the auto-hiding delay.
+    autohide: true
+    autohide-delay: 0
+    autohide-time-modifier: 0

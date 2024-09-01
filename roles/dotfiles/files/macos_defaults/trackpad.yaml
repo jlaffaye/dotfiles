@@ -1,0 +1,14 @@
+---
+description: Trackpad
+kill: ["cfprefsd"]
+data:
+  # Enable tap to click for this user and for the login screen
+  com.apple.AppleMultitouchTrackpad:
+    Clicking: true
+    TrackpadScroll: true
+    TrackpadPinch: 1
+    TrackpadRightClick: true
+    TrackpadThreeFingerDrag: true
+
+  NSGlobalDomain:
+    com.apple.mouse.tapBehavior: 1

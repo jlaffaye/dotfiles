@@ -1,0 +1,19 @@
+---
+description: Media
+data:
+  org.gpgtools.common:
+    DisableKeychain: true
+  org.videolan.vlc:
+    NSRecentDocumentsLimit: 0
+    LSSharedFileList:
+      "!": {} # overwrite dict
+      MaxAmount: 0
+  com.colliderli.iina:
+    actionAfterLaunch: 2
+    quitWhenNoOpenedWindow: true
+    recordPlaybackHistory: false
+    recordRecentFiles: false
+    trackAllFilesInRecentOpenMenu: false
+    SUAutomaticallyUpdate: false
+    SUEnableAutomaticChecks: true
+    SUHasLaunchedBefore: true

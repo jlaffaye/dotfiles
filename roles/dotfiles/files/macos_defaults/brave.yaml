@@ -1,0 +1,10 @@
+---
+description: Brave
+data:
+  /Library/Preferences/com.brave.browser.plist:
+    TorDisabled: true
+    IPFSEnabled: false
+    BraveRewardsDisabled: true
+    BraveWalletDisabled: true
+    BraveVPNDisabled: true
+    BraveAIChatEnabled: false

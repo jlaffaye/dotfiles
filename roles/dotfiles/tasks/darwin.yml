@@ -9,11 +9,7 @@
   when: brewfile.changed
 
 - name: osx defaults
-  include_tasks: "osx_defaults.yml"
-  args:
-    apply:
-      tags:
-        - osx_defaults
+  ansible.builtin.shell: macos-defaults apply {{role_path}}/files/macos_defaults/
 
 - name: copy wallpaper
   copy:
