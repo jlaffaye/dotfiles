@@ -4,5 +4,5 @@ personal dotfiles
 
 ```
 cd ~/dotfiles
-./install.py
+./playbook.yaml
 ```
