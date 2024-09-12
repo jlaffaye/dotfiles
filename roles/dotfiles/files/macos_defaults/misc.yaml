@@ -1,5 +1,5 @@
 ---
-description: Media
+description: Misc
 data:
   org.gpgtools.common:
     DisableKeychain: true
@@ -13,6 +13,7 @@ data:
     quitWhenNoOpenedWindow: true
     recordPlaybackHistory: false
     recordRecentFiles: false
+    resumeLastPosition: false
     trackAllFilesInRecentOpenMenu: false
     SUAutomaticallyUpdate: false
     SUEnableAutomaticChecks: true
