@@ -8,6 +8,16 @@
   ansible.builtin.shell: brew bundle --no-lock --file ~/.Brewfile
   when: brewfile.changed
 
+- name: Render local duti settings
+  ansible.builtin.template:
+    src: "duti.j2"
+    dest: "~/.duti"
+  register: duti
+
+- name: Configure file handlers
+  ansible.builtin.shell: duti ~/.duti
+  when: duti.changed
+
 - name: osx defaults
   ansible.builtin.shell: macos-defaults apply {{role_path}}/files/macos_defaults/
 
