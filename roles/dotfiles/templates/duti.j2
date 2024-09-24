@@ -1,3 +1,7 @@
 {% for ext in ["mkv", "mp4", "avi", "m4v", "mov", "3gp", "ts", "mts", "m2ts", "wmv", "flv", "f4v", "asf", "webm", "rm", "rmvb", "qt", "dv", "mpg", "mpeg", "mxf", "vob", "gif", "ogv", "ogm"] %}
+{% if work %}
+org.videolan.vlc {{ ext }} viewer
+{% else %}
 com.colliderli.iina {{ ext }} viewer
+{% endif %}
 {% endfor %}
