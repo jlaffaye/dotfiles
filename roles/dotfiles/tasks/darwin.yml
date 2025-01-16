@@ -8,6 +8,11 @@
   ansible.builtin.shell: brew bundle --no-lock --file ~/.Brewfile
   when: brewfile.changed
 
+- name: configure Ghostty
+  ansible.builtin.template:
+    src: "ghostty.j2"
+    dest: "~/Library/Application Support/com.mitchellh.ghostty/config"
+
 - name: Render local duti settings
   ansible.builtin.template:
     src: "duti.j2"
