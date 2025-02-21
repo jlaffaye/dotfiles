@@ -69,6 +69,8 @@ cask "appcleaner"
 # Web browser
 cask "firefox"
 cask "font-fira-code"
+# Privacy-first, open-source platform for knowledge sharing and management
+cask "logseq"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop automation application
@@ -81,12 +83,10 @@ cask "visual-studio-code"
 cask "vlc"
 
 {% if perso | default(False) %}
-# E-books management software
-cask "calibre"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
 # Free and open-source media player
 cask "iina"
-# Download YouTube videos from the command-line
-brew "youtube-dl"
 # Office suite
 cask "libreoffice"
 # Instant messaging application focusing on security
