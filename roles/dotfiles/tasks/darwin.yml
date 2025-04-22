@@ -5,7 +5,7 @@
   register: brewfile
 
 - name: Install packages via Homebrew
-  ansible.builtin.shell: brew bundle --no-lock --file ~/.Brewfile
+  ansible.builtin.shell: brew bundle --file ~/.Brewfile
   when: brewfile.changed
 
 - name: configure Ghostty
