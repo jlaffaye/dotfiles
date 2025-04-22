@@ -33,5 +33,5 @@
   register: wallpaper_file
 
 - name: use wallpaper
-  when: wallpaper_file.changed
+  when: wallpaper_file.changed and wallpaper_file.dest is defined
   ansible.builtin.shell: osascript -e 'tell application "Finder" to set desktop picture to POSIX file "{{wallpaper_file.dest}}"'
