@@ -1,9 +1,13 @@
 # {{ ansible_managed }}
 
+tap "dsully/tap"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
+tap "nikitabobko/tap"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
 # Text processing scripting language
 brew "awk"
 # Utility for managing cargo dependencies from the command-line
@@ -12,8 +16,8 @@ brew "cargo-edit"
 brew "dive"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
-# Zstandard is a real-time compression algorithm
-brew "zstd"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
 # Command-line fuzzy finder written in Go
@@ -40,6 +44,8 @@ brew "htop"
 brew "httpie"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Mac App Store command-line interface
+brew "mas"
 # Mock code autogenerator for Golang
 brew "mockery"
 # Remote terminal application
@@ -48,70 +54,106 @@ brew "mosh"
 brew "mtr"
 # NCurses Disk Usage
 brew "ncdu"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Password generator
 brew "pwgen"
 # Python version management
 brew "pyenv"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Rsync for cloud storage
+brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Safe, concurrent, practical language
+# Rust toolchain installer
 brew "rustup"
+# Reversible directory-local environment variable manipulations
+brew "shadowenv"
+# Terminal multiplexer
+brew "tmux"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Watch files and take action when they change
 brew "watchman"
+# Defaults setting for macOS
+brew "dsully/tap/macos-defaults"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
 # Application uninstaller
 cask "appcleaner"
+# Tool to manage periodic breaks
+cask "breaktimer"
 # Web browser
 cask "firefox"
 cask "font-fira-code"
-# Privacy-first, open-source platform for knowledge sharing and management
-cask "logseq"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop automation application
 cask "hammerspoon"
+# Free and open-source media player
+cask "iina"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Customise mouse behavior
+cask "linearmouse"
+# Privacy-first, open-source platform for knowledge sharing and management
+cask "logseq"
+# Shows the next meeting in the menu bar
+cask "meetingbar"
+# Tool to control external monitor brightness & volume
+cask "monitorcontrol"
+# Team communication and collaboration software
+cask "slack"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Network protocol analyzer
+cask "wireshark"
+# Video communication and virtual meeting platform
+cask "zoom"
+# VSCode extensions
+vscode "charliermarsh.ruff"
+vscode "golang.go"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "tamasfe.even-better-toml"
+vscode "vue.volar"
 
 {% if perso | default(False) %}
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
+# Video editor
+cask "avidemux"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Free and open-source media player
 cask "iina"
 # Office suite
 cask "libreoffice"
+# Music tagger
+cask "musicbrainz-picard"
+# Simple Gtk# Paint Program
+cask "pinta"
 # Instant messaging application focusing on security
 cask "signal"
 # Mesh VPN based on WireGuard
 cask "tailscale"
 # Desktop client for Telegram messenger
 cask "telegram-desktop"
-# Desktop client for WhatsApp
+# Native desktop client for WhatsApp
 cask "whatsapp"
-# Simple Paint Program
-cask "pinta"
+mas "Amperfy", id: 1530145038
+mas "Bitwarden", id: 1352778147
 {% endif %}
 
 {% if work | default(False) %}
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Tool to manage periodic breaks
-cask "breaktimer"
-# Support for Logitech G gear
-cask "logitech-g-hub"
-# Software for Logitech devices
-cask "logitech-options"
-# Shows the next meeting in the menu bar
-cask "meetingbar"
 # Remote pair programming app
 cask "tuple"
 {% endif %}
