@@ -59,4 +59,8 @@ data:
 
   # Avoid creation of .DS_Store files on network volumes.
   com.apple.desktopservices:
-     DSDontWriteNetworkStores: true
+    DSDontWriteNetworkStores: true
+
+  com.apple.WindowManager:
+    # Disable click to show desktop
+    EnableStandardClickToShowDesktop: false

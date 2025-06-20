@@ -3,6 +3,12 @@ kill:
   - Dock
 data:
   com.apple.dock:
+    # Group Apps in expose
+    expose-group-apps: true
+
+    # Turn off "Rearrange spaces automatically"
+    mru-spaces: false
+
     # Turn off Spaces auto-switching
     workspaces-auto-swoosh: false
 
