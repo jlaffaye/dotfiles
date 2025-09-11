@@ -1,4 +1,9 @@
-- include_tasks: "{{ ansible_os_family | lower}}.yml"
+- name: "Specific tasks for {{ ansible_os_family }}"
+  include_tasks: "{{ item }}"
+  with_first_found:
+    skip: true
+    files:
+      - "{{role_path}}/tasks/{{ ansible_os_family | lower}}.yml"
 
 - name: Create directories
   ansible.builtin.file:
