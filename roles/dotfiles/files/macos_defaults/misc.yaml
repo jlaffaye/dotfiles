@@ -9,12 +9,14 @@ data:
       "!": {} # overwrite dict
       MaxAmount: 0
   com.colliderli.iina:
+    SUAutomaticallyUpdate: false
+    SUEnableAutomaticChecks: true
+    SUHasLaunchedBefore: true
     actionAfterLaunch: 2
+    alwaysFloatOnTop: true
+    enableThumbnailPreview: false
     quitWhenNoOpenedWindow: true
     recordPlaybackHistory: false
     recordRecentFiles: false
     resumeLastPosition: false
     trackAllFilesInRecentOpenMenu: false
-    SUAutomaticallyUpdate: false
-    SUEnableAutomaticChecks: true
-    SUHasLaunchedBefore: true
