@@ -20,3 +20,5 @@ data:
     recordRecentFiles: false
     resumeLastPosition: false
     trackAllFilesInRecentOpenMenu: false
+  io.tailscale.ipn.macsys:
+    HideDockIcon: true
