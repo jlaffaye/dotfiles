@@ -45,9 +45,9 @@ set linebreak
 set autoindent
 
 " If we are in a tmux session, rename current window
-if $TMUX != ''
-    autocmd VimEnter * silent !tmux rename-window `basename %`
-    autocmd VimLeave * silent !tmux rename-window `basename $SHELL`
+if exists('$TMUX')
+    autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+    autocmd VimLeave * call system("tmux set-window-option automatic-rename")
 endif
 
 " Better indent
