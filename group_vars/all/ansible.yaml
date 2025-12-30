@@ -1,0 +1,2 @@
+ansible_managed: "{{ 'Ansible managed: ' + template_path + ' modified on ' +
+  (template_mtime | string) + ' by ' + template_uid + ' on ' + template_host }}"
